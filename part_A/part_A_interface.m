@@ -7,3 +7,4 @@ sectorization_angle=input('Enter the sectorization angle(360 or 120 or 60) ');
 [N,no_of_cells,cell_radius,A_of_cell,A_of_sector] = part_A(GOS,City_Area,User_density,SIRmin_dB,sectorization_angle);
 fprintf('cluster size is %d, number of cells is %d and cell radius is %.2f km \n',N,no_of_cells,cell_radius);
 fprintf('trafic intensity of a cell is %0.2f and trafic intensity of a sector is %.2f \n',A_of_cell,A_of_sector);
+fprintf('The required Base station transmitted power is %.2f dbm \n' ,p_tx_dBm);
