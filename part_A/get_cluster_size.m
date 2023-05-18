@@ -4,7 +4,7 @@ function N = get_cluster_size(SIRmin_dB,sectorization_angle)
     N=((SIRmin*6)^(1/2))/3;
   elseif sectorization_angle==120
     N=((SIRmin*2)^(1/2))/3;
-  else sectorization_angle==60
+  elseif sectorization_angle==60
     N=((SIRmin*1)^(1/2))/3;
   end
  for i=0:10
@@ -17,7 +17,7 @@ function N = get_cluster_size(SIRmin_dB,sectorization_angle)
  for j=1:length(Cluster_size)
      if N>Cluster_size(j)
          continue;
-     else N<Cluster_size(j) 
+     elseis N<Cluster_size(j) 
          N=Cluster_size(j);
          break;
      end
