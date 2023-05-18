@@ -1,4 +1,4 @@
-function [N,no_of_cells,cell_radius,A_of_cell,A_of_sector]= part_A(GOS,City_area,User_density,SIRmin_dB,sectorization_angle);
+function [N,no_of_cells,cell_radius,A_of_cell,A_of_sector,p_tx_dBm]= part_A(GOS,City_area,User_density,SIRmin_dB,sectorization_angle);
   %%getting cluster size from SIR
   total_users = User_density*City_area;
   no_of_sectors = 360/sectorization_angle;
