@@ -1,6 +1,6 @@
 function A_total = find_A(GOS,c)
 
-A_total = fzero(@erling_b,20);
+A_total = fzero(@erling_b,30);
 
    function A_total = erling_b(A)
     den = 0;
