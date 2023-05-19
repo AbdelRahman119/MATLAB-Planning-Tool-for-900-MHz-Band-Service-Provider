@@ -8,27 +8,26 @@ City_Area=100;
 sectorization_angle=[60 120 360];
 Number_of_Cells=zeros(3,30);
 traffic_per_cell=zeros(3,30);
-figure();
  for i=1:3
   for j=1:length(GOS)
   [N,no_of_cells,cell_radius,A_of_cell,A_of_sector,p_tx_dBm]=part_A(GOS(j),City_Area,User_density,SIRmin_dB,sectorization_angle(i));
   Number_of_Cells(i,j)=no_of_cells;
   traffic_per_cell(i,j)= A_of_cell; 
   end
- subplot(1,3,i)
- plot(GOS,Number_of_Cells(i,1:30))
+ end
+ 
+ figure();
+ plot(GOS,Number_of_Cells(1,1:30),GOS,Number_of_Cells(2,1:30),GOS,Number_of_Cells(3,1:30))
  grid on
  xlabel('GOS');
  ylabel('Number of cells');
- title(['sectorization angle is ',num2str(sectorization_angle(i))]);
- end
+ title('Number of cells vs GOS (SIRminDB=19)');
+ legend('60 sectorization','120 sectorization','Omni-directional');
  
  figure()
- for i=1:3
- subplot(1,3,i)
- plot(GOS,traffic_per_cell(i,1:30))
+ plot(GOS,traffic_per_cell(1,1:30),GOS,traffic_per_cell(2,1:30),GOS,traffic_per_cell(3,1:30))
  grid on
  xlabel('GOS');
  ylabel('traffic per cell');
- title(['sectorization angle is ',num2str(sectorization_angle(i))]);
- end
+ title('Traffic_intensity vs GOS (SIRminDB=19)');
+ legend('60 sectorization','120 sectorization','Omni-directional');
